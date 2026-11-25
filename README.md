@@ -7,7 +7,7 @@ A numerical analysis and probability benchmark comparing **Crude Monte Carlo int
 ### 1. Unbiasedness and $O(N^{-1/2})$ Convergence Rate
 For i.i.d. uniform samples $X_1, \dots, X_N \sim U[a, b]$, define $Q_N = \frac{b-a}{N}\sum_{i=1}^N f(X_i)$ and $I = \int_a^b f(x)\,dx$.
 - **Unbiasedness**: Since $p(x) = \frac{1}{b-a}$ on $[a,b]$, $\mathbb{E}[f(X_i)] = \frac{1}{b-a}\int_a^b f(x)\,dx = \frac{I}{b-a}$, giving $\mathbb{E}[Q_N] = I$.
-- **RMSE Rate**: With $\sigma_f^2 = \operatorname{Var}(f(X_1)) < \infty$, independence yields
+- **RMSE Rate**: With $\sigma_f^2 = \mathrm{Var}(f(X_1)) < \infty$, independence yields
   $$\mathrm{RMSE}(Q_N) = \sqrt{\mathbb{E}[(Q_N - I)^2]} = \sqrt{\mathrm{Var}(Q_N)} = \frac{(b-a)\sigma_f}{\sqrt{N}} = O(N^{-1/2}).$$
 
 ### 2. Why Monte Carlo Wins in High Dimensions
